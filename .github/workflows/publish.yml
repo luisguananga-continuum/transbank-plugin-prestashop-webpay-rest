@@ -12,7 +12,7 @@ jobs:
     name: Build the plugin with PHP 8.2 and upload binaries
     steps:
       - name: 1. Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
