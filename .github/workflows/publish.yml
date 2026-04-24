@@ -44,6 +44,7 @@ jobs:
           sed -i.bkp "s/\$this->version = '1.0.0'/\$this->version = '$VERSION'/g" "webpay/webpay.php"
           sed -i.bkp "s/\[1.0.0\]/\[$VERSION\]/g" "webpay/config.xml"
           sed -i.bkp "s/\[1.0.0\]/\[$VERSION\]/g" "webpay/config_es.xml"
+          rm -f webpay/*.bkp
 
       - name: 6. Archive Release
         uses: thedoctor0/zip-release@0.7.6
