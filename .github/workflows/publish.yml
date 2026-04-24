@@ -23,7 +23,7 @@ jobs:
       - name: 3. Install dependencies
         run: |
           cd webpay
-          composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+          composer install --no-dev --no-interaction --prefer-dist
 
       - name: 4. Verify vendor directory
         run: |
