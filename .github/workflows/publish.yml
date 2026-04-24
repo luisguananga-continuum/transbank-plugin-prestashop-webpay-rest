@@ -45,6 +45,7 @@ jobs:
           sed -i.bkp "s/\[1.0.0\]/\[$VERSION\]/g" "webpay/config.xml"
           sed -i.bkp "s/\[1.0.0\]/\[$VERSION\]/g" "webpay/config_es.xml"
           rm -f webpay/*.bkp
+          rm -f webpay/*.bak
 
       - name: 6. Archive Release
         uses: thedoctor0/zip-release@0.7.6
@@ -52,6 +53,7 @@ jobs:
           type: "zip"
           filename: "plugin-prestashop8.2-webpay-rest-${{github.ref_name}}.zip"
           path: "./webpay"
+          exclusions: '*.bkp *.bak'
 
       - name: 7. Verify ZIP contents
         run: |
